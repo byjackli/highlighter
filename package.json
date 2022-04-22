@@ -1,6 +1,6 @@
 {
   "name": "@byjackli/highlighter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "make web documentation digestible",
   "license": "Apache-2.0",
   "author": "Jack Li",
@@ -24,9 +24,9 @@
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
   },
-  "main": "./components/Code.svelte",
+  "main": "./Code.svelte",
   "exports": {
-    ".": "./components/Code.svelte"
+    ".": "./Code.svelte"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",
