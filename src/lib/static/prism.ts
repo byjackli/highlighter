@@ -31,7 +31,7 @@ export async function init() {
 	initiated = true
 	const style = document.createElement("style"),
 		content = document.createTextNode(
-			`${(await import("../static/code.css")).default}`
+			`${(await import("./code.css")).default}`
 		);
 
 	style.setAttribute("type", "text/css");
