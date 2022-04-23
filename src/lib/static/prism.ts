@@ -29,7 +29,6 @@ export async function init() {
 	if (initiated) return
 
 	initiated = true
-	console.info("why")
 	const style = document.createElement("style"),
 		content = document.createTextNode(
 			`${(await import("../static/code.css")).default}`
