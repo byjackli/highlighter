@@ -1,6 +1,6 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import { highlight, setCustomPattern } from "./prism";
+    import { highlight, setCustomPattern, init } from "../static/prism";
 
     export let lang: string | undefined = undefined,
         code: string | undefined = "",
@@ -9,19 +9,10 @@
     let container: HTMLElement | undefined = undefined;
     $: $$props.string && update();
 
-    async function addCSS() {
-        const style = document.createElement("style"),
-            content = document.createTextNode(`${await import("./code.css")}`);
-
-        style.setAttribute("id", "highlighter-css");
-
-        style.appendChild(content);
-        document.appendChild(style);
-    }
     function update() {
+        init();
         match !== undefined && setCustomPattern(match);
         lang && highlight(container, false, undefined);
-        if (!document.getElementById("highliter-css")) addCSS();
     }
 
     // component made possible by Prism.js

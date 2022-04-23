@@ -24,6 +24,24 @@ export function setCustomPattern(match: Record<string, unknown>): void {
 	Prism.languages.highlight = match
 }
 
+let initiated = false
+export async function init() {
+	if (initiated) return
+
+	initiated = true
+	console.info("why")
+	const style = document.createElement("style"),
+		content = document.createTextNode(
+			`${(await import("../static/code.css")).default}`
+		);
+
+	style.setAttribute("type", "text/css");
+	style.setAttribute("id", "highlighter-css");
+
+	style.appendChild(content);
+	document.getElementsByTagName("head")[0].appendChild(style);
+}
+
 /**
  * Prism: Lightweight, robust, elegant syntax highlighting
  *

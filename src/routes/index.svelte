@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Code from "$lib/Code.svelte";
+    import Code from "$lib/components/Code.svelte";
     import DemoBlock from "../components/DemoBlock.svelte";
 </script>
 
